@@ -73,8 +73,6 @@ jobs:
         SCKEY: ${{ secrets.ACTIONS_TRIGGER_PAT }}
       run: |
         cd openwrt/package
-        mkdir openwrt-packages
-        cd openwrt-packages
         git clone https://github.com/zzsj0928/luci-app-pushbot
         git clone https://github.com/fw876/helloworld
         git clone -b lede https://github.com/pymumu/luci-app-smartdns
