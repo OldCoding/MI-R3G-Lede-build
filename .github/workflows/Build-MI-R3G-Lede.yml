@@ -77,7 +77,7 @@ jobs:
         git clone https://github.com/fw876/helloworld
         git clone -b lede https://github.com/pymumu/luci-app-smartdns
         git clone https://github.com/gngpp/luci-theme-design
-        git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config
+        #git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config
         git clone --depth 1 https://github.com/lxl6125/openwrt-qbittorrent-enhanced
         svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
         git clone https://github.com/xiaorouji/openwrt-passwall
@@ -116,8 +116,9 @@ jobs:
         chmod 755 ./package/luci-app-adguardhome/root/etc/init.d/AdGuardHome
         rm -rf feeds/packages/lang/golang
         git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
-        rm -rf feeds/luci/themes/luci-theme-argon
+        rm -rf feeds/luci/themes/luci-theme-argon && rm -rf feeds/luci/applications/luci-app-argon-config
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git ./feeds/luci/themes/luci-theme-argon
+        git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git ./feeds/luci/applications/luci-app-argon-config
         cd feeds/luci/applications/luci-app-wrtbwmon
         sed -i 's/ selected=\"selected\"//g' ./luasrc/view/wrtbwmon/wrtbwmon.htm && sed -i 's/\"1\"/\"1\" selected=\"selected\"/g' ./luasrc/view/wrtbwmon/wrtbwmon.htm
         sed -i 's/interval: 5/interval: 1/g' ./htdocs/luci-static/wrtbwmon/wrtbwmon.js
