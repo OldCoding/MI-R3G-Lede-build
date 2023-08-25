@@ -111,8 +111,8 @@ jobs:
 
     - name: File Patch After
       run: |
-        #cp -f patch/02_network openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-        #cp -f patch/mt7621_xiaomi_mi-router-3g.dts openwrt/target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts
+        cp -f patch/02_network openwrt/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+        cp -f patch/mt7621_xiaomi_mi-router-3g.dts openwrt/target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts
         cd openwrt
         chmod 755 ./package/luci-app-adguardhome/root/etc/init.d/AdGuardHome
         rm -rf feeds/packages/lang/golang
