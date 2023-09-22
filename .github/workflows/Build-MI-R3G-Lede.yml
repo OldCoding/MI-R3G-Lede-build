@@ -82,7 +82,7 @@ jobs:
         svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
         git clone https://github.com/xiaorouji/openwrt-passwall
         git clone https://github.com/sbwml/luci-app-alist
-        git clone -b luci https://github.com/xiaorouji/openwrt-passwall passwall1 && mv -n passwall1/luci-app-passwall  ./; rm -rf passwall1
+        git clone https://github.com/xiaorouji/openwrt-passwall-packages
         svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
         svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
         svn export https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome
