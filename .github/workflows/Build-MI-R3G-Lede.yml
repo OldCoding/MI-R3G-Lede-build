@@ -192,7 +192,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
         CONFIG_PACKAGE_luci-app-serverchan=y
         CONFIG_PACKAGE_luci-app-pptp-server=y
-        CONFIG_PACKAGE_luci-app-qbittorrent-ee=y
+        # CONFIG_PACKAGE_luci-app-qbittorrent-ee is not set
         CONFIG_PACKAGE_luci-app-smartdns=y
         CONFIG_PACKAGE_luci-app-samba4=y
         CONFIG_PACKAGE_luci-app-ttyd=y
