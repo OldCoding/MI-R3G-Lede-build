@@ -5,4 +5,4 @@
 
 默认密码：password
 
-Lede固件，MediaTek HWNAT
+Lede固件
