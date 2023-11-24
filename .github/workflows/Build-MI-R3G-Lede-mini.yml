@@ -75,7 +75,6 @@ jobs:
         cd openwrt/package
         git clone https://github.com/fw876/helloworld
         git clone https://github.com/gngpp/luci-theme-design
-        #git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config
 
     - name: File Patch Before
       run: |
