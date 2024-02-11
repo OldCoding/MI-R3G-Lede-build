@@ -30,8 +30,7 @@ svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://githu
 #pushd package/luci-app-openclash/tools/po2lmo
 #make && sudo make install
 #popd
-# 微信推送&全能推送
-sed -i "s|qidian|bilibili|g" feeds/luci/applications/luci-app-pushbot/root/usr/bin/pushbot/pushbot
+# 微信推送
 sed -i "s|qidian|bilibili|g" feeds/luci/applications/luci-app-serverchan/root/usr/share/serverchan/serverchan
 # 替换argon主题
 rm -rf feeds/luci/themes/luci-theme-argon
