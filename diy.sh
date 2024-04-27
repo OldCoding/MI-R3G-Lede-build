@@ -42,6 +42,7 @@ sed -i "s|qidian|bilibili|g" feeds/luci/applications/luci-app-wechatpush/root/us
 # 个性化设置
 cd package
 sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/default-settings/files/zzz-default-settings
+sed -i 's/OpenWrt/MI-R3G/' package/base-files/files/bin/config_generate
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
 sed -i 's/192.168.1.1/192.168.10.1/g' base-files/files/bin/config_generate
 # 更新passwall规则
