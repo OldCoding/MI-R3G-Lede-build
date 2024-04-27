@@ -11,7 +11,8 @@ svn_export() {
 	rm -rf "$TMP_DIR"
 }
 
-
+cp -f ./patch/mt7621_xiaomi_mi-router-3g.dts /target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts
+cp -f ./patch/02_network /target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 # 删除冲突软件和依赖
 rm -rf feeds/packages/lang/golang 
 rm -rf feeds/luci/applications/luci-app-pushbot feeds/luci/applications/luci-app-serverchan
