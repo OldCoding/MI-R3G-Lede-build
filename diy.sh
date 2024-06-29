@@ -13,6 +13,7 @@ svn_export() {
 
 cp -f ./patch/mt7621_xiaomi_mi-router-3g.dts /target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts
 cp -f ./patch/02_network /target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+cp -f ./patch/102-mt7621-fix-cpu-clk-add-clkdev.patch /target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 # 删除冲突软件和依赖
 rm -rf feeds/packages/lang/golang 
 rm -rf feeds/luci/applications/luci-app-pushbot feeds/luci/applications/luci-app-serverchan
@@ -26,8 +27,6 @@ git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt
 git clone --depth 1 https://github.com/chenmozhijin/luci-app-adguardhome package/luci-app-adguardhome
 git clone -b openwrt-18.06 --depth 1 https://github.com/tty228/luci-app-wechatpush feeds/luci/applications/luci-app-serverchan
 svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
-
-curl -sfL https://raw.githubusercontent.com/coolsnowwolf/lede/5be81314bb08934fbe03c2e26191b80f021b0d2b/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch > /target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 
 # 编译 po2lmo (如果有po2lmo可跳过)
 #pushd package/luci-app-openclash/tools/po2lmo
