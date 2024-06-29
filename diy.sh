@@ -27,6 +27,8 @@ git clone --depth 1 https://github.com/chenmozhijin/luci-app-adguardhome package
 git clone -b openwrt-18.06 --depth 1 https://github.com/tty228/luci-app-wechatpush feeds/luci/applications/luci-app-serverchan
 svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
 
+curl -sfL https://raw.githubusercontent.com/coolsnowwolf/lede/5be81314bb08934fbe03c2e26191b80f021b0d2b/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch > /target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
+
 # 编译 po2lmo (如果有po2lmo可跳过)
 #pushd package/luci-app-openclash/tools/po2lmo
 #make && sudo make install
