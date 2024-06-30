@@ -14,7 +14,6 @@ svn_export() {
 cp -f ./patch/mt7621_xiaomi_mi-router-3g.dts /target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts
 cp -f ./patch/02_network /target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 cp -f ./patch/102-mt7621-fix-cpu-clk-add-clkdev.patch /target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
-cp -f ./patch/322-mt7621-fix-cpu-clk-add-clkdev.patch /target/linux/ramips/patches-5.10/322-mt7621-fix-cpu-clk-add-clkdev.patch
 # 删除冲突软件和依赖
 rm -rf feeds/packages/lang/golang 
 rm -rf feeds/luci/applications/luci-app-pushbot feeds/luci/applications/luci-app-serverchan
