@@ -10,7 +10,7 @@ svn_export() {
 	cp -af . "$TGT_DIR/" && cd "$ORI_DIR"
 	rm -rf "$TMP_DIR"
 }
-
+rm -rf ./target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 cp -f ./patch/mt7621_xiaomi_mi-router-3g.dts /target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts
 cp -f ./patch/02_network /target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 #cp -f ./patch/102-mt7621-fix-cpu-clk-add-clkdev.patch /target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
