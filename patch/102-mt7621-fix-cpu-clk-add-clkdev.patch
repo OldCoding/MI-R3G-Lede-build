@@ -157,7 +157,6 @@
 +		if ((pll & 0x7f0) == 0x2b0) {
 +			volatile u32 i;
 +
-+			pr_info("CPU Clock: 1100MHz, start overclocking\n");
 +			pll &= ~0x7ff;
 +			pll |= 0x362;
 +			rt_memc_w32(pll, MEMC_REG_CPU_PLL);
