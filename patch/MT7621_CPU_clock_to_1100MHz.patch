@@ -176,7 +176,7 @@ phys_addr_t mips_cpc_default_phys_base(void)
 +        clks[MT7621_CLK_CPU] = mt7621_add_sys_clkdev("cpu", cpu_clk);
 +        clks[MT7621_CLK_BUS] = mt7621_add_sys_clkdev("bus", bus_clk);
 +
-+        pr_info("CPU Clock: %dMHz\n", cpu_clk / 1000000);
++        pr_info("CPU Clocks: %dMHz\n", cpu_clk / 1000000);
 +        mips_hpt_frequency = cpu_clk / 2;
 }
 
