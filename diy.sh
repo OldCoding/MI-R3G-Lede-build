@@ -39,11 +39,11 @@ rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git ./feeds/luci/themes/luci-theme-argon
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 # 微信推送
-sed -i "s|qidian|bilibili|g" feeds/luci/applications/luci-app-wechatpush/root/usr/share/wechatpush/wechatpush
+sed -i "s|qidian|bilibili|g" feeds/luci/applications/luci-app-serverchan/root/usr/share/serverchan/serverchan
 # 个性化设置
 cd package
 sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/default-settings/files/zzz-default-settings
-sed -i 's/OpenWrt/MI-R3G/' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/MI-R3G/' base-files/files/bin/config_generate
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
 sed -i 's/192.168.1.1/192.168.10.1/g' base-files/files/bin/config_generate
 # 更新passwall规则
