@@ -13,7 +13,8 @@ svn_export() {
 #cp -f ./patch/mt7621_xiaomi_mi-router-3g.dts target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts
 #cp -f ./patch/02_network target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 #cp -f $GITHUB_WORKSPACE/patch/102-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
-cp -f $GITHUB_WORKSPACE/patch/MT7621_CPU_clock_to_1100MHz.patch target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
+#cp -f $GITHUB_WORKSPACE/patch/MT7621_CPU_clock_to_1100MHz.patch target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
+curl -sfL https://raw.githubusercontent.com/coolsnowwolf/lede/5be81314bb08934fbe03c2e26191b80f021b0d2b/target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch > target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 # 删除冲突软件和依赖
 rm -rf feeds/packages/lang/golang 
 rm -rf feeds/luci/applications/luci-app-pushbot feeds/luci/applications/luci-app-serverchan
