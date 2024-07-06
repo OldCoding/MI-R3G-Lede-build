@@ -73,9 +73,9 @@ jobs:
 
     - name: File Diy Patch
       run: |
-        #chmod +x $DIY_SH
-        #cd openwrt
-        #$GITHUB_WORKSPACE/$DIY_SH
+        chmod +x $DIY_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_SH
 
     - name: Generate configuration file
       run: |
