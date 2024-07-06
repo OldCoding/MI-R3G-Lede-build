@@ -90,7 +90,7 @@
 +{
 +	u32 syscfg, xtal_sel, clkcfg, clk_sel, curclk, ffiv, ffrac;
 +	u32 pll, prediv, fbdiv;
-+	u32 xtal_clk, cpu_clk, bus_clk,i;
++	u32 xtal_clk, cpu_clk, bus_clk;
 +	const static u32 prediv_tbl[] = {0, 1, 2, 2};
 +
 +	syscfg = rt_sysc_r32(SYSC_REG_SYSTEM_CONFIG0);
