@@ -259,7 +259,7 @@ jobs:
         name: R${{ steps.organize.outputs.release_tag }} for MI-R3G
         allowUpdates: true
         removeArtifacts: true
-        tag: 515-${{ steps.organize.outputs.release_tag }}
+        tag: 510-${{ steps.organize.outputs.release_tag }}
         commit: main
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE }}/*
