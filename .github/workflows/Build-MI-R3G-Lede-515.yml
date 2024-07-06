@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt 510
+name: Build OpenWrt 515
 
 on:
   repository_dispatch:
@@ -121,7 +121,7 @@ jobs:
         CONFIG_TARGET_ramips=y
         CONFIG_TARGET_ramips_mt7621=y
         CONFIG_TARGET_ramips_mt7621_DEVICE_xiaomi_mi-router-3g=y
-        CONFIG_LINUX_5_10=y
+        CONFIG_LINUX_5_15=y
         CONFIG_TESTING_KERNEL=y
         EOF
 
@@ -259,7 +259,7 @@ jobs:
         name: R${{ steps.organize.outputs.release_tag }} for MI-R3G
         allowUpdates: true
         removeArtifacts: true
-        tag: 510-${{ steps.organize.outputs.release_tag }}
+        tag: 515-${{ steps.organize.outputs.release_tag }}
         commit: main
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE }}/*
