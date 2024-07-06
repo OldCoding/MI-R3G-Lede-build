@@ -121,6 +121,8 @@ jobs:
         CONFIG_TARGET_ramips=y
         CONFIG_TARGET_ramips_mt7621=y
         CONFIG_TARGET_ramips_mt7621_DEVICE_xiaomi_mi-router-3g=y
+        CONFIG_LINUX_5_10=y
+        CONFIG_TESTING_KERNEL=y
         EOF
 
         # IPv6支持:
