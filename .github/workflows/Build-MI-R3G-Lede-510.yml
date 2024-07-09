@@ -69,7 +69,8 @@ jobs:
         prefix: ${{ github.workspace }}/openwrt
 
     - name: Update feeds
-      run: cd openwrt
+      run: |
+        cd openwrt
         sed -i ':a;N;$!ba;s/\/luci/\/luci.git;openwrt-23.05/g' feeds.conf.default
         ./scripts/feeds update -a 
         ./scripts/feeds install -a
