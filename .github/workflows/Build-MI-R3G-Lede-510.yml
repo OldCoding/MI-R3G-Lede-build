@@ -149,7 +149,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-firewall=y
         CONFIG_PACKAGE_luci-app-ssr-plus=y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
-        CONFIG_PACKAGE_luci-app-serverchan=y
+        CONFIG_PACKAGE_luci-app-wechatpush=y
         CONFIG_PACKAGE_luci-app-pptp-server=y
         # CONFIG_PACKAGE_luci-app-samba4 is not set
         CONFIG_PACKAGE_luci-app-smartdns=y
