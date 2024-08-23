@@ -16,7 +16,7 @@ cp -f $GITHUB_WORKSPACE/patch/102-mt7621-fix-cpu-clk-add-clkdev.patch target/lin
 cp -f $GITHUB_WORKSPACE/patch/322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10/322-mt7621-fix-cpu-clk-add-clkdev.patch
 
 # 删除冲突软件和依赖
-#rm -rf feeds/packages/lang/golang 
+rm -rf feeds/packages/lang/golang 
 rm -rf feeds/luci/applications/luci-app-pushbot feeds/luci/applications/luci-app-serverchan
 #git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 # 下载插件
@@ -30,6 +30,7 @@ git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/l
 git clone --depth 1 https://github.com/chenmozhijin/luci-app-adguardhome package/luci-app-adguardhome
 git clone --depth 1 https://github.com/tty228/luci-app-wechatpush package/luci-app-wechatpush
 svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
+svn_export "main" "general/golang" "feeds/packages/lang/golang" "https://github.com/breakings/OpenWrt"
 
 # 编译 po2lmo (如果有po2lmo可跳过)
 #pushd package/luci-app-openclash/tools/po2lmo
