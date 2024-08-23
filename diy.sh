@@ -45,6 +45,9 @@ sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/de
 sed -i 's/OpenWrt/MI-R3G/' base-files/files/bin/config_generate
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
 sed -i 's/192.168.1.1/192.168.10.1/g' base-files/files/bin/config_generate
+sed -i 's/openwrt_luci/openwrt_core/g'  lean/default-settings/files/zzz-default-settings
+sed -i 's/snapshots/armvirt\\\/64/g'  lean/default-settings/files/zzz-default-settings
+sed -i 's/releases\\\/18.06.9/armsr\\\/armv8/g'  lean/default-settings/files/zzz-default-settings
 # 更新passwall规则
 curl -sfL -o ./luci-app-passwall/root/usr/share/passwall/rules/gfwlist https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt
 #AdguardHome
