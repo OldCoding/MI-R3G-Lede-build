@@ -84,7 +84,7 @@ jobs:
         git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
         git clone --depth 1 https://github.com/chenmozhijin/luci-app-adguardhome package/luci-app-adguardhome
         #git clone --depth 1 https://github.com/tty228/luci-app-wechatpush package/luci-app-wechatpush
-        sed -i 's/192.168.1.1/192.168.10.1/g' base-files/files/bin/config_generate
+        sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 
 
     - name: Generate configuration file
