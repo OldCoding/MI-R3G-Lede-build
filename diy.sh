@@ -22,7 +22,6 @@ rm -rf feeds/luci/applications/luci-app-pushbot feeds/luci/applications/luci-app
 # 下载插件
 git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 git clone --depth 1 https://github.com/fw876/helloworld package/helloworld
-git clone -b js https://github.com/gngpp/luci-theme-design package/luci-theme-design
 git clone https://github.com/sbwml/luci-app-alist package/luci-app-alist
 git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
