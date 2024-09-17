@@ -28,6 +28,7 @@ git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon package/luci-t
 git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 git clone --depth 1 https://github.com/chenmozhijin/luci-app-adguardhome package/luci-app-adguardhome
 git clone --depth 1 https://github.com/tty228/luci-app-wechatpush package/luci-app-wechatpush
+git clone --depth 1 https://github.com/wangqn/luci-app-filebrowser package/luci-app-filebrowser
 svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
 svn_export "main" "general/golang" "feeds/packages/lang/golang" "https://github.com/breakings/OpenWrt"
 
@@ -35,6 +36,11 @@ svn_export "main" "general/golang" "feeds/packages/lang/golang" "https://github.
 #pushd package/luci-app-openclash/tools/po2lmo
 #make && sudo make install
 #popd
+
+# 安装插件
+./scripts/feeds update -l
+./scripts/feeds install -a
+
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 # 微信推送
 sed -i "s|qidian|bilibili|g" package/luci-app-wechatpush/root/usr/share/wechatpush/wechatpush
