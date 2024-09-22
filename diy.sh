@@ -18,6 +18,7 @@ cp -f $GITHUB_WORKSPACE/patch/322-mt7621-fix-cpu-clk-add-clkdev.patch target/lin
 # 删除冲突软件和依赖
 rm -rf feeds/packages/lang/golang 
 rm -rf feeds/luci/applications/luci-app-pushbot feeds/luci/applications/luci-app-serverchan
+find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 #git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 # 下载插件
 git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
@@ -41,7 +42,6 @@ svn_export "main" "general/golang" "feeds/packages/lang/golang" "https://github.
 ./scripts/feeds update -l
 ./scripts/feeds install -a
 
-find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 # 微信推送
 sed -i "s|qidian|bilibili|g" package/luci-app-wechatpush/root/usr/share/wechatpush/wechatpush
 # 个性化设置
