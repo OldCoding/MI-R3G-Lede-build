@@ -40,7 +40,7 @@ svn_export "main" "general/golang" "feeds/packages/lang/golang" "https://github.
 # 安装插件
 ./scripts/feeds update -l
 ./scripts/feeds install -a
-
+set -x
 # 个性化设置
 cd package
 sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/default-settings/files/zzz-default-settings
