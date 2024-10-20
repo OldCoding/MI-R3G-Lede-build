@@ -38,7 +38,7 @@ svn_export "main" "general/golang" "feeds/packages/lang/golang" "https://github.
 #popd
 
 # 安装插件
-./scripts/feeds update -l
+./scripts/feeds update -i
 ./scripts/feeds install -a
 set -x
 # 个性化设置
