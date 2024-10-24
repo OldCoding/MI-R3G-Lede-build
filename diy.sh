@@ -17,7 +17,13 @@ cp -f $GITHUB_WORKSPACE/patch/322-mt7621-fix-cpu-clk-add-clkdev.patch target/lin
 
 # 删除冲突软件和依赖
 rm -rf feeds/packages/lang/golang 
-rm -rf feeds/luci/applications/luci-app-pushbot feeds/luci/applications/luci-app-serverchan
+rm -rf feeds/luci/applications/luci-app-pushbot
+rm -rf feeds/luci/applications/luci-app-serverchan
+rm -rf feeds/luci/applications/luci-app-adguardhome
+rm -rf feeds/luci/applications/luci-app-smartdns
+rm -rf feeds/luci/applications/luci-app-zerotier
+rm -rf feeds/packages/net/zerotier
+rm -rf feeds/packages/net/smartdns
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 #git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 # 下载插件
@@ -31,6 +37,8 @@ git clone --depth 1 https://github.com/tty228/luci-app-wechatpush package/luci-a
 git clone --depth 1 https://github.com/OldCoding/luci-app-filebrowser package/luci-app-filebrowser
 svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
 svn_export "main" "general/golang" "feeds/packages/lang/golang" "https://github.com/breakings/OpenWrt"
+svn_export "master" "applications/luci-app-zerotier" "feeds/luci/applications/luci-app-zerotier" "https://github.com/immortalwrt/luci"
+svn_export "master" "net/zerotier" "feeds/packages/net/zerotier" "https://github.com/immortalwrt/packages"
 
 # 编译 po2lmo (如果有po2lmo可跳过)
 #pushd package/luci-app-openclash/tools/po2lmo
