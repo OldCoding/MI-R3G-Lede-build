@@ -55,7 +55,7 @@ svn_export "master" "net/zerotier" "feeds/packages/net/zerotier" "https://github
 set -x
 # 个性化设置
 cd package
-sed -i "s/LEDE /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/default-settings/files/zzz-default-settings
+sed -i "s/LEDE /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ LEDE /g" lean/default-settings/files/zzz-default-settings
 sed -i "s/LEDE/MI-R3G/" base-files/luci2/bin/config_generate
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
 sed -i "s/192.168.1.1/192.168.10.1/g" base-files/luci2/bin/config_generate
