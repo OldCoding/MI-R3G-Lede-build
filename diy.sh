@@ -22,6 +22,8 @@ rm -rf feeds/luci/applications/luci-app-serverchan
 rm -rf feeds/luci/applications/luci-app-adguardhome
 rm -rf feeds/luci/applications/luci-app-smartdns
 rm -rf feeds/luci/applications/luci-app-zerotier
+rm -rf feeds/luci/applications/luci-app-alist
+rm -rf feeds/packages/net/alist
 rm -rf feeds/packages/net/zerotier
 rm -rf feeds/packages/net/smartdns
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
@@ -53,10 +55,10 @@ svn_export "master" "net/zerotier" "feeds/packages/net/zerotier" "https://github
 set -x
 # 个性化设置
 cd package
-sed -i "s/OpenWrt /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/default-settings/files/zzz-default-settings
-sed -i "s/OpenWrt/MI-R3G/" base-files/files/bin/config_generate
+sed -i "s/LEDE /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" lean/default-settings/files/zzz-default-settings
+sed -i "s/LEDE/MI-R3G/" base-files/luci2/bin/config_generate
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
-sed -i "s/192.168.1.1/192.168.10.1/g" base-files/files/bin/config_generate
+sed -i "s/192.168.1.1/192.168.10.1/g" base-files/luci2/bin/config_generate
 sed -i "/openwrt_luci/d" lean/default-settings/files/zzz-default-settings
 
 # 更新passwall规则
