@@ -27,6 +27,7 @@ rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/alist
 rm -rf feeds/packages/net/zerotier
 rm -rf feeds/packages/net/smartdns
+rm -rf feeds/packages/utils/v2dat
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 #git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 # 下载插件
