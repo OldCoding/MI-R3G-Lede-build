@@ -21,11 +21,13 @@ rm -rf feeds/luci/applications/luci-app-filebrowser
 rm -rf feeds/luci/applications/luci-app-pushbot
 rm -rf feeds/luci/applications/luci-app-serverchan
 rm -rf feeds/luci/applications/luci-app-adguardhome
+rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-smartdns
 rm -rf feeds/luci/applications/luci-app-zerotier
 rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/alist
 rm -rf feeds/packages/net/zerotier
+rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/packages/utils/v2dat
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
