@@ -32,7 +32,7 @@ rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/packages/utils/v2dat
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-#git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
+git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 # 下载插件
 git clone --depth 1 https://github.com/fw876/helloworld package/helloworld
 git clone --depth 1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
@@ -47,7 +47,6 @@ git clone --depth 1 https://github.com/hudra0/qosmate package/qosmate
 svn_export "master" "applications/luci-app-smartdns" "feeds/luci/applications/luci-app-smartdns" "https://github.com/immortalwrt/luci"
 svn_export "master" "net/smartdns" "feeds/packages/net/smartdns" "https://github.com/immortalwrt/packages"
 svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
-svn_export "main" "general/golang" "feeds/packages/lang/golang" "https://github.com/breakings/OpenWrt"
 svn_export "master" "applications/luci-app-zerotier" "feeds/luci/applications/luci-app-zerotier" "https://github.com/immortalwrt/luci"
 svn_export "master" "net/zerotier" "feeds/packages/net/zerotier" "https://github.com/immortalwrt/packages"
 svn_export "v5" "luci-app-mosdns" "package/luci-app-mosdns" "https://github.com/sbwml/luci-app-mosdns"
