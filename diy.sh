@@ -32,6 +32,8 @@ rm -rf feeds/packages/net/zerotier
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/packages/utils/v2dat
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-design/root/etc/uci-defaults/30_luci-theme-design
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 # 下载插件
@@ -68,11 +70,16 @@ curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turbo
 # 安装插件
 ./scripts/feeds update -i
 ./scripts/feeds install -a
-set -x
+
+# 调整菜单位置
+sed -i "s|services|system|g" feeds/luci/applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json
+sed -i "s|services|network|g" feeds/luci/applications/luci-app-nlbwmon/root/usr/share/luci/menu.d/luci-app-nlbwmon.json
+
 # 个性化设置
 cd package
 sed -i "s/LEDE /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ LEDE /g" lean/default-settings/files/zzz-default-settings
 sed -i "s/LEDE/MI-R3G/" base-files/luci2/bin/config_generate
+sed -i "/ntp/d" lean/default-settings/files/zzz-default-settings
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
 sed -i "s/192.168.1.1/192.168.10.1/g" base-files/luci2/bin/config_generate
 sed -i "/openwrt_luci/d" lean/default-settings/files/zzz-default-settings
