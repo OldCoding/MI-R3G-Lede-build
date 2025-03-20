@@ -26,6 +26,7 @@ rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-smartdns
 rm -rf feeds/luci/applications/luci-app-zerotier
 rm -rf feeds/luci/applications/luci-app-alist
+rm -rf feeds/luci/applications/luci-app-turboacc
 rm -rf feeds/packages/net/alist
 rm -rf feeds/packages/net/zerotier
 rm -rf feeds/packages/net/mosdns
@@ -57,6 +58,12 @@ svn_export "v5" "v2dat" "package/v2dat" "https://github.com/sbwml/luci-app-mosdn
 #pushd package/luci-app-openclash/tools/po2lmo
 #make && sudo make install
 #popd
+
+# 切换firewall4
+sed -i 's/+firewall/+uci-firewall/g' feeds/luci/applications/luci-app-firewall/Makefile
+
+# turboacc 补丁
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 # 安装插件
 ./scripts/feeds update -i
