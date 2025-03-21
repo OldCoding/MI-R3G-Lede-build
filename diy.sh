@@ -26,7 +26,6 @@ rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-smartdns
 rm -rf feeds/luci/applications/luci-app-zerotier
 rm -rf feeds/luci/applications/luci-app-alist
-rm -rf feeds/luci/applications/luci-app-turboacc
 rm -rf feeds/packages/net/alist
 rm -rf feeds/packages/net/zerotier
 rm -rf feeds/packages/net/mosdns
@@ -61,13 +60,6 @@ svn_export "v5" "v2dat" "package/v2dat" "https://github.com/sbwml/luci-app-mosdn
 #make && sudo make install
 #popd
 
-# 切换firewall4
-sed -i 's/+firewall/+uci-firewall/g' feeds/luci/applications/luci-app-firewall/Makefile
-
-# turboacc 补丁
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
-mv ./package/turboacc/luci-app-turboacc ./feeds/luci/applications/luci-app-turboacc
-
 # 安装插件
 ./scripts/feeds update -i
 ./scripts/feeds install -a
@@ -94,9 +86,9 @@ ADG_VER=$(curl -sfL https://api.github.com/repos/AdguardTeam/AdGuardHome/release
 curl -sfL -o /tmp/AdGuardHome_linux.tar.gz https://github.com/AdguardTeam/AdGuardHome/releases/download/${ADG_VER}/AdGuardHome_linux_mipsle_softfloat.tar.gz
 tar -zxf /tmp/*.tar.gz -C /tmp/ && chmod +x /tmp/AdGuardHome/AdGuardHome
 #upx_latest_ver="$(curl -sfL https://api.github.com/repos/upx/upx/releases/latest 2>/dev/null | egrep 'tag_name' | egrep '[0-9.]+' -o 2>/dev/null)"
-#curl -sfL -o /tmp/upx-${upx_latest_ver}-amd64_linux.tar.xz "https://github.com/upx/upx/releases/download/v${upx_latest_ver}/upx-${upx_latest_ver}-amd64_linux.tar.xz"
-#xz -d -c /tmp/upx-${upx_latest_ver}-amd64_linux.tar.xz | tar -x -C "/tmp"
-#/tmp/upx-${upx_latest_ver}-amd64_linux/upx --ultra-brute /tmp/AdGuardHome/AdGuardHome > /dev/null 2>&1
+curl -sfL -o /tmp/upx-4.2.4-amd64_linux.tar.xz "https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-amd64_linux.tar.xz"
+xz -d -c /tmp/upx-4.2.4-amd64_linux.tar.xz | tar -x -C "/tmp"
+/tmp/upx-4.2.4-amd64_linux/upx --ultra-brute /tmp/AdGuardHome/AdGuardHome > /dev/null 2>&1
 mv /tmp/AdGuardHome/AdGuardHome ./ && rm -rf /tmp/AdGuardHome
 #cd $GITHUB_WORKSPACE/openwrt && cd feeds/luci/applications/luci-app-wrtbwmon
 #sed -i 's/ selected=\"selected\"//g' ./luasrc/view/wrtbwmon/wrtbwmon.htm && sed -i 's/\"1\"/\"1\" selected=\"selected\"/g' ./luasrc/view/wrtbwmon/wrtbwmon.htm

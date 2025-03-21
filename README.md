@@ -10,5 +10,3 @@ Lede固件，采用新版openwrt-23.05 Luci界面
 使用5.10内核版本（5.4停止支持）
 
 CPU超频至1100MHz
-
-使用新版防火墙firewall4
