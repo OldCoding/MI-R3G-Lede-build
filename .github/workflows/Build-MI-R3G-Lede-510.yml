@@ -174,8 +174,6 @@ jobs:
         # 常用软件包:
         cat >> .config <<EOF
         CONFIG_PACKAGE_kmod-sched-red=y
-        # CONFIG_PACKAGE_firewall is not set
-        CONFIG_PACKAGE_firewall4=y
         # CONFIG_PACKAGE_luci-app-unblockmusic is net set
         EOF
 
