@@ -66,6 +66,7 @@ sed -i 's/+firewall/+uci-firewall/g' feeds/luci/applications/luci-app-firewall/M
 
 # turboacc 补丁
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+mv ./package/turboacc/luci-app-turboacc ./feeds/luci/applications/luci-app-turboacc
 
 # 安装插件
 ./scripts/feeds update -i
