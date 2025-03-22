@@ -76,6 +76,8 @@ sed -i "/ntp/d" lean/default-settings/files/zzz-default-settings
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
 sed -i "s/192.168.1.1/192.168.10.1/g" base-files/luci2/bin/config_generate
 sed -i "/openwrt_luci/d" lean/default-settings/files/zzz-default-settings
+sed -i "s/encryption='.*'/encryption='sae-mixed'/g" kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '186i \\t\t\tset wireless.default_radio${devidx}.key=123456789' kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 更新passwall规则
 curl -sfL -o ./luci-app-passwall/root/usr/share/passwall/rules/gfwlist https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt

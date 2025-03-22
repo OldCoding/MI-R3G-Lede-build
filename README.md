@@ -5,7 +5,11 @@
 
 默认密码：password
 
-Lede固件，采用新版openwrt-23.05 Luci界面
+WiFi名称：LEDE
+
+WiFi密码：123456789
+
+Lede固件，采用新版openwrt Luci JS界面
 
 使用5.10内核版本（5.4停止支持）
 
