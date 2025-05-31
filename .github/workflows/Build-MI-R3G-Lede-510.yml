@@ -138,6 +138,8 @@ jobs:
         CONFIG_PACKAGE_luci-app-passwall=y
         CONFIG_PACKAGE_luci-app-autoreboot=y
         CONFIG_PACKAGE_luci-app-ddns=y
+        CONFIG_PACKAGE_easytier=y
+        CONFIG_PACKAGE_luci-app-easytier=y
         CONFIG_PACKAGE_luci-app-filetransfer=y
         CONFIG_PACKAGE_luci-app-filebrowser=y
         CONFIG_PACKAGE_luci-app-nlbwmon=y
@@ -159,7 +161,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-vlmcsd=y
         CONFIG_PACKAGE_luci-app-zerotier=y
         CONFIG_PACKAGE_luci-app-adguardhome=y
-        CONFIG_PACKAGE_luci-app-qosmate=y
+        CONFIG_PACKAGE_luci-app-sqm=y
         CONFIG_PACKAGE_luci-app-mosdns=y
         CONFIG_PACKAGE_luci-app-turboacc=y
         EOF
@@ -224,7 +226,7 @@ jobs:
         make -j1 V=s
 
     - name: Check space usage
-      if: (!cancelled())
+      if: steps.compile.outputs.status == 'success' && !cancelled()
       run: df -hT
 
     - name: Organize files

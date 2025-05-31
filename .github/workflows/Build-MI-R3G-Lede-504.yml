@@ -18,8 +18,8 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
- # watch:
- #   types: [started]
+  watch:
+    types: [started]
     
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -140,6 +140,8 @@ jobs:
         CONFIG_PACKAGE_luci-app-passwall=y
         CONFIG_PACKAGE_luci-app-autoreboot=y
         CONFIG_PACKAGE_luci-app-ddns=y
+        CONFIG_PACKAGE_easytier=y
+        CONFIG_PACKAGE_luci-app-easytier=y
         CONFIG_PACKAGE_luci-app-filetransfer=y
         CONFIG_PACKAGE_luci-app-filebrowser=y
         CONFIG_PACKAGE_luci-app-nlbwmon=y
@@ -161,8 +163,9 @@ jobs:
         CONFIG_PACKAGE_luci-app-vlmcsd=y
         CONFIG_PACKAGE_luci-app-zerotier=y
         CONFIG_PACKAGE_luci-app-adguardhome=y
-        CONFIG_PACKAGE_luci-app-qosmate=y
+        CONFIG_PACKAGE_luci-app-sqm=y
         CONFIG_PACKAGE_luci-app-mosdns=y
+        CONFIG_PACKAGE_luci-app-turboacc=y
         EOF
 
         # LuCI主题:
@@ -175,8 +178,6 @@ jobs:
         # 常用软件包:
         cat >> .config <<EOF
         CONFIG_PACKAGE_kmod-sched-red=y
-        # CONFIG_PACKAGE_firewall is not set
-        CONFIG_PACKAGE_firewall4=y
         # CONFIG_PACKAGE_luci-app-unblockmusic is net set
         EOF
 
