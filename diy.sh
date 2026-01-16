@@ -60,10 +60,6 @@ mv ./package/adguardhome/* ./package/ && rm -rf ./package/adguardhome
 #make && sudo make install
 #popd
 
-# 安装插件
-./scripts/feeds update -i
-./scripts/feeds install -a
-
 # 调整菜单位置
 sed -i "s|services|system|g" feeds/luci/applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json
 sed -i "s|services|network|g" feeds/luci/applications/luci-app-nlbwmon/root/usr/share/luci/menu.d/luci-app-nlbwmon.json
