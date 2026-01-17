@@ -69,10 +69,10 @@ sed -i "s|services|network|g" feeds/luci/applications/luci-app-nlbwmon/root/usr/
 # 个性化设置
 cd package
 sed -i "s/LEDE /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ LEDE /g" lean/default-settings/files/zzz-default-settings
-sed -i "s/LEDE/MI-R3G/" base-files/luci/bin/config_generate
+sed -i "s/LEDE/MI-R3G/" base-files/files/bin/config_generate
 sed -i "/ntp/d" lean/default-settings/files/zzz-default-settings
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
-sed -i "s/192.168.1.1/192.168.10.1/g" base-files/luci/bin/config_generate
+sed -i "s/192.168.1.1/192.168.10.1/g" base-files/files/bin/config_generate
 sed -i "/openwrt_luci/d" lean/default-settings/files/zzz-default-settings
 sed -i "s/encryption='.*'/encryption='sae-mixed'/g" kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i "s/country='.*'/country='CN'/g" kernel/mac80211/files/lib/wifi/mac80211.sh
