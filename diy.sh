@@ -10,6 +10,8 @@ svn_export() {
 	cp -af . "$TGT_DIR/" && cd "$ORI_DIR"
 	rm -rf "$TMP_DIR"
 }
+curl -sfL -o target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts https://raw.githubusercontent.com/padavanonly/immortalwrt/refs/heads/master/target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts
+curl -sfL -o target/linux/ramips/mt7621/base-files/etc/board.d/02_network https://raw.githubusercontent.com/padavanonly/immortalwrt/refs/heads/master/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 #cp -f $GITHUB_WORKSPACE/patch/mt7621_xiaomi_mi-router-3g.dts target/linux/ramips/dts/mt7621_xiaomi_mi-router-3g.dts
 #cp -f $GITHUB_WORKSPACE/patch/02_network target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 cp -f $GITHUB_WORKSPACE/patch/102-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
