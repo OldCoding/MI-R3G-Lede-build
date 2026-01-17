@@ -208,17 +208,6 @@ jobs:
         # CONFIG_PACKAGE_luci-theme-design is net set
         EOF
 
-        # 闭源驱动:
-        cat >> .config <<EOF
-        CONFIG_PACKAGE_luci-app-mtwifi=y
-        CONFIG_MTK_CHIP_MT7603E_MT7612E=y
-        # CONFIG_PACKAGE_kmod-mt7603 is not set
-        CONFIG_PACKAGE_kmod-mt7603e=y
-        # CONFIG_PACKAGE_kmod-mt76x2 is not set
-        CONFIG_PACKAGE_kmod-mt76x2e=y
-        # CONFIG_PACKAGE_wpad-openssl is not set
-        EOF
-
 
         # 常用软件包:
         cat >> .config <<EOF
