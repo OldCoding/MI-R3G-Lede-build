@@ -76,8 +76,8 @@ sed -i "/firewall\.user/d" package/lean/default-settings/files/zzz-default-setti
 sed -i "s/192.168.1.1/192.168.10.1/g" package/base-files/files/bin/config_generate
 sed -i "/openwrt_luci/d" package/lean/default-settings/files/zzz-default-settings
 sed -i "/openwrt_release/d" package/lean/default-settings/files/zzz-default-settings
-sed -i "s/encryption='.*'/encryption='sae-mixed'/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i "s/country='.*'/country='CN'/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i "s/encryption=.*/encryption=sae-mixed/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i "s/country=.*/country=CN/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '186i \\t\t\tset wireless.default_radio${devidx}.key=123456789' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 cd package
 # 更新passwall规则
