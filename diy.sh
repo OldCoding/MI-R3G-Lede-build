@@ -69,18 +69,17 @@ sed -i "s|services|system|g" feeds/luci/applications/luci-app-ttyd/root/usr/shar
 sed -i "s|services|network|g" feeds/luci/applications/luci-app-nlbwmon/root/usr/share/luci/menu.d/luci-app-nlbwmon.json
 
 # 个性化设置
-cd package
 sed -i "s/(\(luciversion || ''\))/(\1) + (' \/ Wing build $(TZ=UTC-8 date "+%Y.%m.%d")')/g" $(find ./feeds/luci/modules/luci-mod-status/ -type f -name "10_system.js")
-sed -i "s/LEDE/MI-R3G/" base-files/files/bin/config_generate
-sed -i "/ntp/d" lean/default-settings/files/zzz-default-settings
-sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
-sed -i "s/192.168.1.1/192.168.10.1/g" base-files/files/bin/config_generate
-sed -i "/openwrt_luci/d" lean/default-settings/files/zzz-default-settings
+sed -i "s/LEDE/MI-R3G/" package/base-files/files/bin/config_generate
+sed -i "/ntp/d" package/lean/default-settings/files/zzz-default-settings
+sed -i "/firewall\.user/d" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/192.168.1.1/192.168.10.1/g" package/base-files/files/bin/config_generate
+sed -i "/openwrt_luci/d" package/lean/default-settings/files/zzz-default-settings
 sed -i "/openwrt_release/d" package/lean/default-settings/files/zzz-default-settings
-sed -i "s/encryption='.*'/encryption='sae-mixed'/g" kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i "s/country='.*'/country='CN'/g" kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i '186i \\t\t\tset wireless.default_radio${devidx}.key=123456789' kernel/mac80211/files/lib/wifi/mac80211.sh
-
+sed -i "s/encryption='.*'/encryption='sae-mixed'/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i "s/country='.*'/country='CN'/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '186i \\t\t\tset wireless.default_radio${devidx}.key=123456789' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+cd package
 # 更新passwall规则
 curl -sfL -o ./luci-app-passwall/root/usr/share/passwall/rules/gfwlist https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt
 #AdguardHome
