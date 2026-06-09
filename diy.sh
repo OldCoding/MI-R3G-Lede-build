@@ -15,7 +15,7 @@ cp -f $GITHUB_WORKSPACE/patch/102-mt7621-fix-cpu-clk-add-clkdev.patch target/lin
 cp -f $GITHUB_WORKSPACE/patch/322-mt7621-fix-cpu-clk-add-clkdev.patch target/linux/ramips/patches-5.10/322-mt7621-fix-cpu-clk-add-clkdev.patch
 
 # 删除冲突软件和依赖
-rm -rf feeds/packages/lang/golang 
+#rm -rf feeds/packages/lang/golang 
 rm -rf feeds/luci/applications/luci-app-filebrowser
 rm -rf feeds/luci/applications/luci-app-pushbot
 rm -rf feeds/luci/applications/luci-app-serverchan
@@ -31,14 +31,14 @@ rm -rf feeds/packages/utils/v2dat
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/themes/luci-theme-design/root/etc/uci-defaults/30_luci-theme-design
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
+#git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 # 下载插件
 git clone --depth 1 https://github.com/fw876/helloworld package/helloworld
 git clone --depth 1 https://github.com/sbwml/luci-app-openlist2 package/openlist2
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/openwrt-passwall-packages
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-git clone --depth 1 https://github.com/sirpdboy/luci-app-adguardhome package/adguardhome
+git clone --depth 1 https://github.com/OldCoding/luci-app-adguardhome package/adguardhome
 git clone --depth 1 https://github.com/tty228/luci-app-wechatpush package/luci-app-wechatpush
 git clone --depth 1 https://github.com/OldCoding/luci-app-filebrowser package/luci-app-filebrowser
 git clone --depth 1 https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
@@ -61,6 +61,10 @@ mv ./package/openlist2/* ./package/ && rm -rf ./package/openlist2
 #pushd package/luci-app-openclash/tools/po2lmo
 #make && sudo make install
 #popd
+
+# 安装插件
+./scripts/feeds update -i
+./scripts/feeds install -a
 
 # 调整菜单位置
 sed -i "s|services|nas|g" package/luci-app-openlist2/root/usr/share/luci/menu.d/luci-app-openlist2.json
